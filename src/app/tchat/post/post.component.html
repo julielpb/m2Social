@@ -1,0 +1,8 @@
+<ng-container *ngIf=post>
+  <p>Id: {{post.id}}</p>
+  <p>Content: {{post.content}}</p>
+  <p *ngIf="post.img"><img src="{{post.img}}" height="200"></p>
+  <a routerLink="/tchat/user/{{post.userId}}">User</a>
+  <p>Timestamp: {{post.timestamp}}</p>
+  <button (click)="delete()" routerLink="/tchat">Supprimer</button>
+</ng-container>
