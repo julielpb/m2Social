@@ -20,8 +20,4 @@ export class PostComponent implements OnInit {
   ngOnInit() {
   }
 
-  delete() {
-    this.service.deletePost(this.post).subscribe();
-  }
-
 }

@@ -33,4 +33,8 @@ export class TchatService {
   getIdUser(id: number) {
     return this.http.get<User>(`api/users/${id}`).retry(3);
   }
+
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>('api/users/').retry(3);
+  }
 }

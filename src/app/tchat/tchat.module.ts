@@ -7,12 +7,14 @@ import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import {TchatService} from './tchat.service';
 import { UserComponent } from './user/user.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 const routes: Routes = [
   { path: 'tchat', component: TchatRootComponent,
     children: [
       { path: ':id', component: PostComponent},
       { path: 'user/:id', component: UserComponent},
+      { path: 'users', component: UserListComponent},
       { path: '', component: PostListComponent}
     ]
   }
@@ -26,7 +28,7 @@ const routes: Routes = [
   exports: [
     TchatRootComponent
   ],
-  declarations: [TchatRootComponent, PostComponent, PostListComponent, UserComponent],
+  declarations: [TchatRootComponent, PostComponent, PostListComponent, UserComponent, UserListComponent],
   providers: [TchatService],
 })
 export class TchatModule { }
